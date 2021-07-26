@@ -16,6 +16,12 @@ function ShoppingList({ items, onSearchChange, filterSearch }) {
     return item.category === selectedCategory;
   });
 
+  const searchedItemsToDisplay = items.filter((item) => {
+    if (filterSearch === "All") return true;
+
+    return item === filterSearch;
+  });
+
   return (
     <div className="ShoppingList">
       <ItemForm />

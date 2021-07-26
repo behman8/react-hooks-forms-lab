@@ -6,7 +6,7 @@ import itemData from "../data/items";
 function App() {
   const [items, setItems] = useState(itemData);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [filterSearch, setFilterSearch] = useState("");
+  const [filterSearch, setFilterSearch] = useState("All");
 
   function handleFilterSearch(event) {
     setFilterSearch(event.target.value);
