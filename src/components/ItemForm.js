@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 
 function ItemForm(props) {
+
   return (
     <form className="NewItem">
       <label>
         Name:
-        <input type="text" name="name" />
+        <input type="text" onChange={props.handleNewItem} name="name" />
       </label>
 
       <label>
@@ -17,8 +18,7 @@ function ItemForm(props) {
           <option value="Dessert">Dessert</option>
         </select>
       </label>
-
-      <button type="submit">Add to List</button>
+      <button type="submit" onChange={props.onItemFormSubmit}>Add to List</button>
     </form>
   );
 }
